@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(249, 242, 255);
+  font-family: sans-serif;
+}
+.container {
+  width: 89%;
+  margin: 1rem auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+}
+h1 {
+  color: rgb(0, 0, 44);
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.add-book button {
+  padding: 12px 9px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+.module {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000a2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+form {
+  max-width: 540px;
+  min-width: 18%;
+  padding: 32px 16px;
+  border-radius: 7px;
+  background-color: rgb(255, 244, 231);
+  background-color: rgb(246, 237, 255);
+  box-shadow: 0 2px 5px #000;
+  position: relative;
+}
+h2 {
+  font-size: 2.3rem;
+  text-align: center;
+}
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 9px 5px;
+  display: block;
+  margin: 17px 0;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+}
+label.statusQTxt {
+  font-size: 15px;
+  font-weight: lighter;
+  /* margin: 17px 0;
+        margin-right: 5px;
+        display: inline-block; */
+  display: block;
+  margin: 17px 0;
+  margin-right: 5px;
+}
+input[type="radio"] {
+  margin-left: 12px;
+}
+.submit {
+  width: 100%;
+  background-color: blueviolet;
+  padding: 9px 5px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 17px;
+}
+span {
+  position: absolute;
+  right: 9px;
+  border: 0.6px solid rgb(197, 197, 197);
+  top: 9px;
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+}
+#books {
+  display: flex;
+  margin-top: 3rem;
+}
+.book {
+  padding: 15px;
+  border: 1px solid #000;
+  margin: 7px 0;
+  margin-right: 21px;
+  border: 12px solid blueviolet;
+  border-radius: 7px;
+}
+.book div {
+  font-size: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+.book .statusChangeBtn {
+  background-color: blueviolet;
+  padding: 6px;
+  cursor: pointer;
+  border: none;
+  /* width: 100%; */
+  color: #fff;
+  border-radius: 3px;
+}

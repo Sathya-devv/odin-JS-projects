@@ -3,112 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background-color: rgb(249, 242, 255);
-        font-family: sans-serif;
-      }
-      .container {
-        width: 89%;
-        margin: 1rem auto;
-      }
-      header {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        justify-content: space-between;
-      }
-      h1 {
-        color: rgb(0, 0, 44);
-        font-size: 3.2rem;
-        font-weight: 700;
-      }
-      .add-book button {
-        padding: 12px 9px;
-        border-radius: 4px;
-        color: #fff;
-        font-size: 16px;
-        border: none;
-        background-color: blueviolet;
-        cursor: pointer;
-      }
-      .module {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #000000a2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: none;
-      }
-      form {
-        width: 18%;
-        padding: 32px 16px;
-        border-radius: 7px;
-        background-color: rgb(255, 244, 231);
-        background-color: rgb(246, 237, 255);
-        box-shadow: 0 2px 5px #000;
-        position: relative;
-      }
-      input[type="text"],
-      input[type="number"] {
-        width: 100%;
-        padding: 9px 5px;
-        display: block;
-        margin: 14px 0;
-        outline: none;
-        border: none;
-        border-radius: 3px;
-        font-size: 17px;
-      }
-      label.statusQTxt {
-        font-size: 15px;
-        font-weight: lighter;
-        /* margin: 17px 0;
-        margin-right: 5px;
-        display: inline-block; */
-        display: block;
-        margin: 17px 0;
-        margin-right: 5px;
-      }
-      input[type="radio"] {
-        margin-left: 12px;
-      }
-      .submit {
-        width: 100%;
-        background-color: blueviolet;
-        padding: 9px 5px;
-        border: none;
-        border-radius: 3px;
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
-        margin-top: 17px;
-      }
-      span {
-        position: absolute;
-        right: 9px;
-        border: 0.6px solid rgb(197, 197, 197);
-        top: 9px;
-        border-radius: 3px;
-        padding: 3px;
-        cursor: pointer;
-      }
-      .book {
-        padding: 12px;
-        border: 1px solid #000;
-        margin: 7px 0;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Books lobrary</title>
+    
   </head>
   <body>
     <div class="container">
@@ -123,6 +20,7 @@
 
       <div class="module">
         <form action="/" id="submitbtn">
+          <h2>Add book</h2>
           <input
             name="tittle"
             id="tittle"
@@ -136,72 +34,19 @@
             >Have you Read this Book?</label
           >
           <!-- <input type="checkbox" id="status" name="" id="" /> -->
-          <input type="radio" class="status" name="status" value="yes" checked/><label for="status">
+          <input type="radio" class="statusAns" name="status" value="yes" checked/><label for="status">
             YES</label
           >
-          <input type="radio" class="status" name="status" value="no"/><label for="status"></label>
+          <input type="radio" class="statusAns" name="status" value="no"/><label for="status"></label>
             NO</label
           >
 
           <button type="submit" class="submit">Submit</button>
           <span class="close-form">X</span>
         </form>
+        <!-- <button class="statusChangeBtn">d</button> -->
       </div>
     </div>
-
-    <script>
-
-      const books = [];
-      function Book(tittle, author, pages, status) {
-        this.tittle = tittle;
-        this.author = author;
-        this.pages = pages;
-        this.status = status;
-      }
-      document.querySelector(".close-form").addEventListener("click", () => {
-        document.querySelector(".module").style.display = "none";
-      });
-      document.querySelector(".add-book").addEventListener("click", () => {
-        document.querySelector(".module").style.display = "flex";
-      });
-      document.getElementById("submitbtn").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const tempBookArray = [];
-        let tittle = document.getElementById("tittle").value;
-        let author = document.getElementById("author").value;
-        let pages = document.getElementById("pages").value;
-        let readStatus;
-        document.querySelectorAll('.status').forEach(elmnt => {
-            if (elmnt.checked) {
-                readStatus = elmnt.value
-            }
-        });
-        tempBookArray.push(new Book(tittle, author, pages, readStatus));
-        console.log(new Book(tittle, author, pages, readStatus))
-        tempBookArray.forEach((boook) => {
-          const book = document.createElement("div");
-          book.classList.add("book");
-          for (const key in boook) {
-            let bookProp = document.createElement("div");
-            bookProp.classList.add(key);
-            if (key === "status") {
-              boook[key] === 'yes'
-                ? (bookProp.textContent = "Read")
-                : (bookProp.textContent = "Not Read");
-            } else {
-              bookProp.textContent = boook[key];
-            }
-            book.appendChild(bookProp);
-        }
-        console.log(book)
-          document.getElementById("books").appendChild(book);
-          books.push(tempBookArray[0]);
-        });
-        console.log(books)
-        document.querySelector(".module").style.display = "none";
-        document.querySelector(".add-book").style.display = "block";
-      });
-     
-    </script>
+<script src="scipt.js"></script>
   </body>
 </html>
