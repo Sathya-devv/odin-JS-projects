@@ -63,6 +63,7 @@ hr {
 .sidebar a {
   color: #fff;
   text-align: left;
+  text-decoration: none;
 }
 .sidebar i {
   margin-right: 12%;
