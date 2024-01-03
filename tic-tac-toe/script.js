@@ -38,7 +38,6 @@ function gameFunctionality(index) {
       }
     }
 
-    console.log(newarr);
     if (someHasWon) {
       gameOverModal.style.display = "flex";
       winnerText.textContent =
