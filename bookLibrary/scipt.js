@@ -25,6 +25,7 @@ function statusChange(e) {
 // document.querySelector(".status").textContent === "READ"
 //   ? "NOT READ"
 //   : "READ";
+// console
 // };
 
 document.querySelector(".add-book").addEventListener("click", () => {
